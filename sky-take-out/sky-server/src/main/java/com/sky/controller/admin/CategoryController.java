@@ -16,6 +16,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/admin/category")
 @Api(tags = "分类相关方法")
@@ -47,7 +49,7 @@ public class CategoryController {
     @ApiOperation("根据id删除分类")
     public Result deleteById(@RequestParam Long id){
         log.info("删除分类id:{}",id);
-        categoryService.delete(id);
+        categoryService.deleteById(id);
         return Result.success();
     }
 
@@ -85,22 +87,22 @@ public class CategoryController {
      */
     @PutMapping
     @ApiOperation("编辑分类信息")
-    public Result update(@RequestBody CategoryDTO categoryDTO){
+    public Result<String> update(@RequestBody CategoryDTO categoryDTO){
         log.info("编辑分类信息:{}",categoryDTO);
         categoryService.update(categoryDTO);
         return Result.success();
     }
 
-//    /**根据类型查询分类
-//     *
-//     * @param type
-//     * @return
-//     */
-//    @GetMapping("/list")
-//    @ApiOperation("根据类型查询分类")
-//    public Result list(@RequestBody long type){
-//        log.info("当前查询分类为:{}",type);
-//        categoryService.list(type);
-//        return Result.success();
-//    }
+    /**根据类型查询分类
+     *
+     * @param type
+     * @return
+     */
+    @GetMapping("/list")
+    @ApiOperation("根据类型查询分类")
+    public Result<List<Category>> list(@RequestBody Integer type){
+        log.info("当前查询分类为:{}",type);
+        List<Category> list = categoryService.list(type);
+        return Result.success(list);
+    }
 }
