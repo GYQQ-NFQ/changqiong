@@ -7,7 +7,7 @@ sky:
     username: changqiongroot
     password: cHyPNSJNSaFbzwKp
   minio:
-    endpoint: https://minioserver.linqigyqq.top/
-    accessKey: DYcsXvmCbrecualEegJ1
-    secretKey: anC820RgPhN0QabthUV1qbKUBFzDGeKgoAwurqQQ
+    endpoint: http://127.0.0.1:9000
+    accessKey: PX712JNHo03T2AvSO2Yy
+    secretKey: Ow7BoA9yecHJD9VTMM0miBraRYBk42D8ePPPWEm6
     bucketName: changqiongwaimai

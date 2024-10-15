@@ -30,13 +30,12 @@ public class MinioUtil {
      * @return          文件访问路径
      */
     public String upload(byte[] bytes, String objectName) {
+        // 创建MinioClient实例。
+        MinioClient minioClient =  MinioClient.builder()
+                .endpoint(endpoint)
+                .credentials(accessKey, secretKey)
+                .build();
         try {
-            // 创建MinioClient实例。
-            MinioClient minioClient = MinioClient.builder()
-                    .endpoint(endpoint)
-                    .credentials(accessKey, secretKey)
-                    .build();
-
             // 创建PutObject请求。
             ByteArrayInputStream inputStream = new ByteArrayInputStream(bytes);
             minioClient.putObject(
@@ -46,19 +45,6 @@ public class MinioUtil {
                             .stream(inputStream, bytes.length, -1)
                             .contentType("application/octet-stream")
                             .build());
-
-            // 文件访问路径规则 https://BucketName.Endpoint/ObjectName
-            StringBuilder stringBuilder = new StringBuilder("https://");
-            stringBuilder
-                    .append(bucketName)
-                    .append(".")
-                    .append(endpoint)
-                    .append("/")
-                    .append(objectName);
-
-            log.info("文件上传到: {}", stringBuilder.toString());
-
-            return stringBuilder.toString();
         } catch (MinioException e) {
             log.error("MinioException error occurred: {}", e);
             return null;
@@ -69,5 +55,17 @@ public class MinioUtil {
             log.error("Security error occurred: {}", e);
             return null;
         }
+        // 文件访问路径规则 endpoint/bucketname/ObjectName
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder
+                .append(endpoint)
+                .append("/")
+                .append(bucketName)
+                .append("/")
+                .append(objectName);
+
+        log.info("文件上传到: {}", stringBuilder.toString());
+
+        return stringBuilder.toString();
     }
 }
