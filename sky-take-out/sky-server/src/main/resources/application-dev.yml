@@ -6,3 +6,8 @@ sky:
     database: changqiong
     username: changqiongroot
     password: cHyPNSJNSaFbzwKp
+  minio:
+    endpoint: https://minioserver.linqigyqq.top/
+    accessKey: DYcsXvmCbrecualEegJ1
+    secretKey: anC820RgPhN0QabthUV1qbKUBFzDGeKgoAwurqQQ
+    bucketName: changqiongwaimai
