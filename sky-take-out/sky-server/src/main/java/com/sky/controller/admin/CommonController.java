@@ -2,6 +2,7 @@
 // @version 2024/10/15 16:16
 package com.sky.controller.admin;
 
+import com.sky.constant.MessageConstant;
 import com.sky.result.Result;
 import com.sky.utils.MinioUtil;
 import io.swagger.annotations.Api;
@@ -55,6 +56,6 @@ public class CommonController {
         } catch (IOException e) {
             log.error("文件上传失败:{}",e);
         }
-        return null;
+        return Result.error(MessageConstant.UPLOAD_FAILED);
     }
 }

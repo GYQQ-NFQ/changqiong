@@ -27,8 +27,8 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    /**分类分页查询
-     *
+    /**
+     * 分类分页查询
      * @param categoryPageQueryDTO
      * @return
      */
@@ -40,8 +40,8 @@ public class CategoryController {
         return Result.success(pageResult);
     }
 
-    /**根据id删除分类
-     *
+    /**
+     * 根据id删除分类
      * @param id
      * @return
      */
@@ -53,8 +53,8 @@ public class CategoryController {
         return Result.success();
     }
 
-    /**启用禁用分类
-     *
+    /**
+     * 启用禁用分类
      * @param status
      * @param id
      * @return
@@ -67,8 +67,8 @@ public class CategoryController {
         return Result.success();
     }
 
-    /**新增分类
-     *
+    /**
+     * 新增分类
      * @param categoryDTO
      * @return
      */
@@ -80,8 +80,8 @@ public class CategoryController {
         return Result.success();
     }
 
-    /**编辑分类信息
-     *
+    /**
+     * 编辑分类信息
      * @param categoryDTO
      * @return
      */
@@ -93,14 +93,14 @@ public class CategoryController {
         return Result.success();
     }
 
-    /**根据类型查询分类
-     *
+    /**
+     * 根据类型查询分类
      * @param type
      * @return
      */
     @GetMapping("/list")
     @ApiOperation("根据类型查询分类")
-    public Result<List<Category>> list(@RequestBody Integer type){
+    public Result<List<Category>> list(Integer type){
         log.info("当前查询分类为:{}",type);
         List<Category> list = categoryService.list(type);
         return Result.success(list);
