@@ -15,8 +15,8 @@ import java.util.List;
 @Mapper
 public interface DishMapper {
 
-    /**根据分类id查询菜品数量
-     *
+    /**
+     * 根据分类id查询菜品数量
      * @param categoryId
      * @return
      */
@@ -52,6 +52,16 @@ public interface DishMapper {
     @Delete("delete from dish where id = #{id}")
     void deleteById(Long id);
 
-    //根据菜品id集合批量删除菜品
+    /**
+     * 根据菜品id集合批量删除菜品
+     * @param ids
+     */
     void deleteByIds(List<Long> ids);
+
+    /**
+     * 根据id动态修改菜品数据
+     * @param dish
+     */
+    @AutoFill(value = OperationType.UPDATE)
+    void update(Dish dish);
 }
