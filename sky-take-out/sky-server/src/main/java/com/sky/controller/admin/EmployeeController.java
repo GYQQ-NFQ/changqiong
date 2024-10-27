@@ -37,7 +37,6 @@ public class EmployeeController {
 
     /**
      * 登录
-     *
      * @param employeeLoginDTO
      * @return
      */
@@ -68,7 +67,6 @@ public class EmployeeController {
 
     /**
      * 退出
-     *
      * @return
      */
     @PostMapping("/logout")
@@ -77,8 +75,8 @@ public class EmployeeController {
         return Result.success();
     }
 
-    /**新增员工
-     *
+    /**
+     * 新增员工
      * @param employeeDTO
      * @return
      */
@@ -91,8 +89,8 @@ public class EmployeeController {
         return Result.success();
     }
 
-    /**分页查询
-     *
+    /**
+     * 分页查询
      * @param employeePageQueryDTO
      * @return
      */
@@ -104,8 +102,8 @@ public class EmployeeController {
         return Result.success(pageResult);
     }
 
-    /**启用禁用员工账号
-     *
+    /**
+     * 启用禁用员工账号
      * @param status
      * @param id
      * @return
@@ -118,8 +116,8 @@ public class EmployeeController {
         return Result.success();
     }
 
-    /**根据id查询员工信息
-     *
+    /**
+     * 根据id查询员工信息
      * @param id
      * @return
      */
@@ -130,8 +128,8 @@ public class EmployeeController {
         return Result.success(employee);
     }
 
-    /**编辑员工信息
-     *
+    /**
+     * 编辑员工信息
      * @param employeeDTO
      * @return
      */
