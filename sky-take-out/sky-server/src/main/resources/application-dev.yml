@@ -11,3 +11,8 @@ sky:
     accessKey: PX712JNHo03T2AvSO2Yy
     secretKey: Ow7BoA9yecHJD9VTMM0miBraRYBk42D8ePPPWEm6
     bucketName: changqiongwaimai
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    database: 10

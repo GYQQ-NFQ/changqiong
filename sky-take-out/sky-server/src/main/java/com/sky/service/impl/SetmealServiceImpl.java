@@ -142,7 +142,7 @@ public class SetmealServiceImpl implements SetmealService {
             if(dishList != null && dishList.size() > 0){
                 dishList.forEach(dish -> {
                     if(StatusConstant.DISABLE == dish.getStatus()){
-                        throw new SetmealEnableFailedException(MessageConstant.SETMEAL_ENABLE_FAILED)
+                        throw new SetmealEnableFailedException(MessageConstant.SETMEAL_ENABLE_FAILED);
                     }
                 });
             }
