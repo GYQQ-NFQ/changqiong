@@ -32,7 +32,7 @@ public interface SetmealDishMapper {
 
     /**
      * 根据套餐id查套餐和菜品关联关系
-     * @param id
+     * @param setmealId
      * @return
      */
     @Select("select * from setmeal_dish where setmeal_id = #{setmealId}")

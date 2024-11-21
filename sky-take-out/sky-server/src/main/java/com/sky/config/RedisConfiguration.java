@@ -17,7 +17,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 public class RedisConfiguration {
 
     @Bean
-    public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory){
+    public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory,ObjectMapper objectMapper){
         log.info("开始创建redis模版对象...");
         RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
         //设置redis的连接工厂对象
@@ -28,7 +28,7 @@ public class RedisConfiguration {
         // 使用Jackson2JsonRedisSerializer作为值序列化器
         Jackson2JsonRedisSerializer<Object> valueSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
         try {
-            valueSerializer.setObjectMapper(new ObjectMapper());
+            valueSerializer.setObjectMapper(objectMapper);
         } catch (Exception e) {
             log.error("初始化Jackson2JsonRedisSerializer失败,不使用序列化器传入", e);
         }
