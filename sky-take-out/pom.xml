@@ -33,6 +33,7 @@
         <minio>8.5.12</minio>
         <httpclient>4.5.13</httpclient>
         <springjson>3.3.5</springjson>
+        <springboot.cache>3.3.5</springboot.cache>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -41,7 +42,11 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.spring}</version>
             </dependency>
-
+            <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-cache</artifactId>
+               <version>${springboot.cache}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-json</artifactId>
