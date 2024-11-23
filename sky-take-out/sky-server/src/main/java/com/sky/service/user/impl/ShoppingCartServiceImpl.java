@@ -81,7 +81,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
      * @return
      */
     @Override
-    public List<ShoppingCart> showShopingCart() {
+    public List<ShoppingCart> showShoppingCart() {
         Long userId = BaseContext.getCurrentId();
         ShoppingCart shoppingCart = ShoppingCart.builder()
                 .userId(userId)
