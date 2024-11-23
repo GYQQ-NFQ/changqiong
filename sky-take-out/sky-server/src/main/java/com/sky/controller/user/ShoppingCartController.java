@@ -68,7 +68,7 @@ public class ShoppingCartController {
     @PostMapping("/sub")
     public Result sub(@RequestBody ShoppingCartDTO shoppingCartDTO){
         log.info("删除商品:{}",shoppingCartDTO);
-        shoppingCartService.subShoppingCart(ShoppingCartDTO);
+        shoppingCartService.subShoppingCart(shoppingCartDTO);
         return Result.success();
     }
 }
