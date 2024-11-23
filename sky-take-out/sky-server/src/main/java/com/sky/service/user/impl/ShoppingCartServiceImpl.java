@@ -63,6 +63,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
             }else {
                 //套餐
                 Long setmealId = shoppingCart.getSetmealId();
+
                 Setmeal setmeal = setmealMapper.getById(setmealId);
                 shoppingCart.setName(setmeal.getName());
                 shoppingCart.setImage(setmeal.getImage());
@@ -80,7 +81,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
      * @return
      */
     @Override
-    public List<ShoppingCart> showShoppingCart() {
+    public List<ShoppingCart> showShopingCart() {
         Long userId = BaseContext.getCurrentId();
         ShoppingCart shoppingCart = ShoppingCart.builder()
                 .userId(userId)
