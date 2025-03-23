@@ -1,5 +1,6 @@
 package com.sky.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -91,6 +92,7 @@ public class Orders implements Serializable {
     private LocalDateTime cancelTime;
 
     //预计送达时间
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime estimatedDeliveryTime;
 
     //配送状态  1立即送出  0选择具体时间

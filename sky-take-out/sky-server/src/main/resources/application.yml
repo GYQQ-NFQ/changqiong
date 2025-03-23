@@ -56,3 +56,7 @@ sky:
   wechat:
     appid: {sky.wechat.appid}
     secret: {sky.wechat.secret}
+  shop:
+    address: 广州市白云区太和镇兴太三路638号
+  baidu:
+    ak: xZgOMH13C7zKK8FPFcwCmSn9fxZ4uNww
